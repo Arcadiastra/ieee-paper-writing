@@ -1,6 +1,6 @@
-# IEEE Transactions Paper Writing Skill
+# IEEE Academic Paper Writing Skill
 
-An IEEE Transactions paper writing skill suite for academic writing and review with agents such as Codex and Claude Code, comprising one main skill and seven section skills.
+A skill suite for writing and reviewing IEEE academic papers with agents such as Codex and Claude Code, comprising one main skill and seven section skills.
 
 Although this is an agent writing skill, authors are encouraged to draw on its principles and **write the initial draft themselves**. This skill advocates using AI to assist with planning, organization, translation, revision, and polishing, rather than delegating the entire writing process to AI.
 
@@ -11,11 +11,12 @@ Although this is an agent writing skill, authors are encouraged to draw on its p
 ## Scope
 
 - Build paper outlines, draft sections, revise and review manuscripts, verify references, and control length.
-- Reuse the writing conventions and citation tooling of [ieee-transactions-paper-writing-zh](https://github.com/Arcadiastra/ieee-transactions-paper-writing-zh), with distinct skill names and localized documentation.
+- Default to an IEEE Transactions journal as the submission target, adapting to the actual venue and manuscript type. Official submission requirements take precedence.
+- Reuse the writing conventions and citation tooling of [ieee-paper-writing-zh](https://github.com/Arcadiastra/ieee-paper-writing-zh), with distinct skill names and localized documentation.
 
 ## Installation
 
-Copy the entire `ieee-transactions-paper-writing` folder into the skills directory of your agent, retaining all subdirectories:
+Copy the entire `ieee-paper-writing` folder into the skills directory of your agent, retaining all subdirectories:
 
 | Agent | macOS / Linux | Windows |
 | --- | --- | --- |
@@ -29,19 +30,19 @@ Reload skills or restart the agent, then invoke the main skill:
 Codex:
 
 ```text
-$ieee-transactions-paper-writing
+$ieee-paper-writing
 ```
 
 Claude Code:
 
 ```text
-/ieee-transactions-paper-writing
+/ieee-paper-writing
 ```
 
 ## Structure and Entry Points
 
 ```text
-ieee-transactions-paper-writing/
+ieee-paper-writing/
 |-- SKILL.md
 |-- README.md
 |-- LICENSE
@@ -80,11 +81,11 @@ Each section skill has its own instructions, UI metadata, and outline template.
 ## Usage
 
 ```text
-$ieee-transactions-paper-writing Review the paper structure and contribution chain. Propose changes without editing the manuscript yet.
+$ieee-paper-writing Review the paper structure and contribution chain. Propose changes without editing the manuscript yet.
 
-$ieee-transactions-paper-writing-abstract Revise the abstract using the paper's actual findings. Show the original, revision, and rationale.
+$ieee-paper-writing-abstract Revise the abstract using the paper's actual findings. Show the original, revision, and rationale.
 
-$ieee-transactions-paper-writing-results-and-discussions Check whether the discussion connects the results to the problem and mechanisms without repeating figure values.
+$ieee-paper-writing-results-and-discussions Check whether the discussion connects the results to the problem and mechanisms without repeating figure values.
 ```
 
 If the host does not discover nested skills independently, use the main skill to route the task or provide the relevant file path. All eight skills include `agents/openai.yaml` metadata.
@@ -105,7 +106,7 @@ An optional **Bibverify 0.5.0 CLI** backend runs in a separate environment with 
 Every `SKILL.md` includes `name`, `description`, `license`, `allowed-tools`, and `metadata`.
 
 - `metadata.trigger` describes the intended task; it is not a standardized activation switch.
-- `metadata.target-venue` is `IEEE Transactions journals`.
+- `metadata.target-venue` is `IEEE journals and conferences`.
 - `metadata.language` is `en`.
 - `metadata.source_repository` identifies the source suite.
 - `allowed-tools` lists conventional file, shell, and search tool names. The main and abstract skills also list `Task` for independent review.
@@ -114,7 +115,7 @@ Tool names and support vary across hosts. Metadata does not grant execution perm
 
 ## Writing Conventions
 
-The abstract contains no specific numerical values, and results prose does not repeat figure/table values. Organize the body around problems, mechanisms, and evidence. The default full-paper budget is 10 pages, adjusted for the venue and the user's requirements. Section skills define length budgets, citation conventions, and revision approval requirements.
+The abstract contains no specific numerical values, and results prose does not repeat figure/table values. Organize the body around problems, mechanisms, and evidence. The Transactions preset uses a 10-page full-paper budget; determine the actual budget from the target venue and the user's requirements. Section skills define length budgets, citation conventions, and revision approval requirements.
 
 ## License
 

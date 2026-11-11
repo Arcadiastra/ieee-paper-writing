@@ -1,13 +1,13 @@
 ---
-name: ieee-transactions-paper-writing-abstract
-description: Plan, draft, revise, and review IEEE Transactions abstracts and Index Terms. Build a self-contained account of the problem, challenges, mechanisms, and qualitative validation without specific numerical values, and select searchable keywords.
+name: ieee-paper-writing-abstract
+description: Plan, draft, revise, and review abstracts and Index Terms for IEEE academic papers. Build a self-contained account of the problem, challenges, mechanisms, and qualitative validation without specific numerical values, and select searchable keywords.
 license: MIT
 allowed-tools: Read Write Edit Glob Grep Bash WebSearch WebFetch Task
 metadata:
   language: en
-  trigger: IEEE Transactions abstract planning, drafting, revision, and review.
-  target-venue: IEEE Transactions journals
-  source_repository: https://github.com/Arcadiastra/ieee-transactions-paper-writing-zh.git
+  trigger: Planning, drafting, revision, and review of abstracts and Index Terms for IEEE academic papers.
+  target-venue: IEEE journals and conferences
+  source_repository: https://github.com/Arcadiastra/ieee-paper-writing-zh.git
 ---
 # Abstract
 
@@ -29,7 +29,7 @@ Combine functions where appropriate, without mechanically prescribing a sentence
 
 ## Writing Rules
 
-- Include at least one topic within the target journal's scope and at least one explicit noun naming a core research object within that scope.
+- Include at least one topic within the target venue's scope and at least one explicit noun naming a core research object within that scope.
 - Make the abstract fully self-contained. Readers should be able to assess relevance from the abstract alone; preserve a complete logical chain independent of the main text.
 - Do not include specific performance values, percentages, dataset sizes, system sizes, component counts, hyperparameters, or training settings. Spelling out numbers does not bypass this rule.
 - Necessary established terms such as `three-dimensional` are not result values. Judge meaning rather than deleting characters globally.
@@ -46,7 +46,7 @@ Combine functions where appropriate, without mechanically prescribing a sentence
 
 ## Five-Term Strategy
 
-Use five keywords or keyword phrases by default, covering the research chain. Keep them aligned with the target journal's topic scope: **include at least one keyword clearly within that scope**.
+Use five keywords or keyword phrases by default, covering the research chain. Keep them aligned with the target venue's topic scope: **include at least one keyword clearly within that scope**.
 
 1. Research object or application setting (one): identify the system, such as `Distribution networks`, `Microgrids`, or `Power transmission systems`.
 2. Core research task (one): identify the problem, such as `State estimation`, `Optimal power flow`, or `Network reconfiguration`.
@@ -69,14 +69,14 @@ For a title such as *Deep Learning Approaches for Feeder Parameter Estimation*, 
 
 # Review and Delivery
 
-When delegation is available and authorized, ask an independent reviewer to first read only the title, abstract, and Index Terms and search for the target journal's topic scope. Request:
+When delegation is available and authorized, ask an independent reviewer to first read only the title, abstract, and Index Terms and search for the target venue's topic scope. Request:
 
-1. Whether the title, abstract, and Index Terms each contain at least one topic within the target journal's scope and at least one explicit noun naming a core research object within that scope, and an assessment of the risk of desk rejection as `out of scope`.
+1. Whether the title, abstract, and Index Terms each contain at least one topic within the target venue's scope and at least one explicit noun naming a core research object within that scope, and an assessment of the risk of desk rejection as `out of scope`.
 2. Its inferred account of the body and estimated novelty and quality, including whether the text is sufficiently self-explanatory and contains apparent internal codes with no context.
 
 If an independent reviewer cannot be assigned, perform this part of the review in the main agent.
 
-Then read the body to check that every method and result judgment is supported, that specific numerical values are absent from the abstract, and that the logical chain is complete. Check smooth, logically accurate connectors and the target journal's known length requirements.
+Then read the body to check that every method and result judgment is supported, that specific numerical values are absent from the abstract, and that the logical chain is complete. Check smooth, logically accurate connectors and the target venue's known length requirements.
 
 For revisions, propose changes and obtain approval before applying them. Include four parts: the complete original abstract, the complete revised abstract, the rationale, and supporting passages from the body. Add translations only when requested.
 

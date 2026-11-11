@@ -1,19 +1,21 @@
 ---
-name: ieee-transactions-paper-writing
-description: Plan, draft, revise, and review IEEE Transactions papers. Coordinate seven section skills around contributions, mechanisms, evidence, affirmative phrasing, cross-section coherence, and length control.
+name: ieee-paper-writing
+description: Plan, draft, revise, and review IEEE academic papers. Coordinate seven section skills around contributions, mechanisms, evidence, affirmative phrasing, cross-section coherence, and length control.
 license: MIT
 allowed-tools: Read Write Edit Glob Grep Bash WebSearch WebFetch Task
 metadata:
   language: en
-  trigger: Planning, drafting, revision, and review of IEEE Transactions-style academic papers.
-  target-venue: IEEE Transactions journals
-  source_repository: https://github.com/Arcadiastra/ieee-transactions-paper-writing-zh.git
+  trigger: Planning, drafting, revision, and review of IEEE academic papers.
+  target-venue: IEEE journals and conferences
+  source_repository: https://github.com/Arcadiastra/ieee-paper-writing-zh.git
 ---
-# IEEE Transactions Paper Writing
+# IEEE Academic Paper Writing
 
 ## Scope and Use
 
 The main skill governs shared principles, section responsibilities, and acceptance checks. Load only the section skills needed for the task.
+
+This suite covers IEEE academic papers. The default submission target is an IEEE Transactions journal. Establish the specific target venue and manuscript type before selecting the structure, length, and reference budgets. Official submission requirements take precedence over defaults in the main and section skills.
 
 | Section skill           | File                                                  | Responsibility                                                     |
 | ----------------------- | ----------------------------------------------------- | ------------------------------------------------------------------ |
@@ -27,9 +29,9 @@ The main skill governs shared principles, section responsibilities, and acceptan
 
 ## Writing Workflow
 
-### Target Journal and Scope Verification
+### Target Venue and Scope Verification
 
-Before planning, drafting, revising, or reviewing a paper, first establish the target journal. If it is unspecified, confirm it with the user. Then search online and read official pages from the journal or its sponsoring society to verify its Topics within the journal scope, topics out-of-scope, or equivalent scope statements. Record the source links and verification date. If the official site does not separately list out-of-scope topics, state that explicitly. If official evidence cannot be obtained, clearly tell the user that this check failed.
+Before planning, drafting, revising, or reviewing a paper, first establish the target venue and manuscript type. If the venue is unspecified, confirm it with the user. Then search online and read official pages from the target venue to verify its scope, call-for-papers topics, and requirements of the selected track or special topic. Check any explicitly excluded topics, and record the source links and verification date. If the official site does not separately list out-of-scope topics, state that explicitly. If official evidence cannot be obtained, clearly tell the user that this check failed.
 
 Use the official scope to identify topics relevant to the paper and nouns or noun phrases naming their core research objects. Preserve the research objects, application settings, and other necessary qualifiers in those topics. Check them against the paper's research problem, core contributions, and validation, and check relevant out-of-scope entries. For an existing manuscript, use its current content as evidence; before drafting, check the proposed problem, objects, and contributions.
 
@@ -45,11 +47,11 @@ Adapt the workflow to the existing workspace and user feedback. The sequence bel
 
 ### Build the Structure
 
-When the user has neither special requirements nor an outline, first prepare an outline with a 10-page initial-submission budget. Treat this as the suite's default budget; explicit requirements of the target journal take precedence.
+When the user has neither special requirements nor an outline, first prepare an outline. For IEEE Transactions manuscripts, use the suite's default 10-page initial-submission preset; for other IEEE manuscripts, determine the budget from the target venue's submission requirements.
 
-If no template is supplied, use the [official IEEE LaTeX template](https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/authoring-tools-and-templates/tools-for-ieee-authors/ieee-article-templates/). Immediately flag an incompatible user-provided format.
+Use the target venue's official LaTeX template. For journal papers, the [IEEE journal template page](https://journals.ieeeauthorcenter.ieee.org/create-your-ieee-journal-article/authoring-tools-and-templates/tools-for-ieee-authors/ieee-article-templates/) is another source of applicable templates; for conference papers, follow the conference website's template and document-class options. Immediately flag a user-provided format that conflicts with the target venue's official requirements.
 
-Unless instructed otherwise, use five main body sections, plus the abstract and references, within 10 total PDF pages.
+Unless instructed otherwise, use five main body sections. The following table details the 10-page Transactions preset, including the abstract and references.
 
 | Section                 | Recommended budget              |
 | ----------------------- | ------------------------------- |
@@ -61,7 +63,7 @@ Unless instructed otherwise, use five main body sections, plus the abstract and 
 | Conclusion              | 150-200 words                   |
 | References              | At least 30 entries; 0.7-1 page |
 
-Use this structure unless the paper requires a special arrangement. If the target page limit differs from 10, scale section budgets and reference-count budgets proportionally. Configure `.latexmkrc` as appropriate for a working automatic build.
+Use this structure unless the paper requires a special arrangement. If the target page limit differs from 10, scale section budgets and applicable reference-count budgets proportionally; apply source requirements within the scope defined by the citation skill. Configure `.latexmkrc` as appropriate for a working automatic build.
 
 If an existing paper substantially differs from this structure, stop and ask the user to choose:
 
@@ -75,7 +77,7 @@ Proceed only according to the selected option.
 
 When the target is a conference paper, letter, or other short manuscript, first read the official submission instructions of the venue. Verify the total page limit and whether it includes references, the abstract word limit, the number and ordering rule of Index Terms, the document class and its options, and the format of author information and first-page footnotes. Official requirements take precedence over this suite's defaults; when they conflict, follow the official requirement and tell the user.
 
-- Scale the recommended section budgets, hard limits, and reference count in proportion to the page limit.
+- Scale the recommended section budgets, hard limits, and applicable reference-count budgets in proportion to the page limit.
 - Reserve the author block, affiliations, first-page footnote, and acknowledgment at their real line counts from the first build, so that every page measurement reflects the final layout. If the user has not supplied this information, omit the acknowledgment by default, reserve five placeholder lines for the author block, and reserve three placeholder lines for the first-page footnote.
 - When the page budget cannot hold every subsection required by the section skills, adjacent subsections may be merged, with each argumentative responsibility still covered.
 - Content that a section skill marks as omissible in short papers is omitted with the user's consent.
@@ -98,13 +100,13 @@ Respect section hard limits during drafting. In the final length pass, use recom
 
 ## First Principles
 
-- Ensure that the research problem, core contributions, and validation align with the target journal's scope and pass the preceding target-journal and scope verification.
+- Ensure that the research problem, core contributions, and validation align with the target venue's scope and pass the preceding target-venue and scope verification.
 - Organize the argument around contributions: important problem -> key obstacle -> novel mechanism -> experimental evidence -> significance.
 - Allocate space to mechanism innovation. Do not turn the body into an implementation checklist or research diary. Do not include filesystem paths. Avoid internal codes; if necessary, define their full names on first use.
 - Explain positively what the paper solves, how, and why it works. Unless requested, reserve limitations, unfinished work, and defensive negative boundary statements for the limitations and future work passage.
 - Preserve the conditions and evidence scope necessary for the conclusions. Calibrate certainty without diluting claims until they cease to explain the contribution. Express key conclusions affirmatively.
 - No specific numerical values in the abstract. Do not repeat numerical values from figures or tables in results analysis prose. Put necessary values in figures, tables, or mathematical expressions.
-- Default to at most 10 pages for the full initial-submission PDF, including references.
+- The Transactions preset defaults to at most 10 pages for the full initial-submission PDF, including references, author information, footnotes, acknowledgments, and other content.
 
 ## Five Body Sections and Contribution Roles
 
@@ -211,7 +213,7 @@ Substantive edits at sentence or phrase level may use a short proposal with thre
 
 Proofreading order:
 
-1. Check the journal's topic scope. If there is a clear `out of scope` risk, immediately alert the user through the environment's user-confirmation dialog. Explain the relevant official scope entries, the manuscript's current content, and whether the risk concerns unclear presentation or a substantive research mismatch. If no dialog tool is available, give an explicit conversational alert and wait for confirmation.
+1. Check the target venue's topic scope. If there is a clear `out of scope` risk, immediately alert the user through the environment's user-confirmation dialog. Explain the relevant official scope entries, the manuscript's current content, and whether the risk concerns unclear presentation or a substantive research mismatch. If no dialog tool is available, give an explicit conversational alert and wait for confirmation.
 2. Compare the full structure with the suite's five-section structure; ask before major restructuring or rewriting.
 3. Compare each section with its section skill; ask before major restructuring or rewriting.
 4. Correct clear spelling, grammar, and formatting errors.
@@ -238,7 +240,7 @@ Editing checks:
 
 ## Overall Acceptance
 
-- The paper aligns with relevant topics within the target journal's scope, and the title, abstract, and Index Terms each contain at least one in-scope topic and at least one explicit noun naming a core research object within that scope.
+- The paper aligns with relevant topics within the target venue's scope, and the title, abstract, and Index Terms each contain at least one in-scope topic and at least one explicit noun naming a core research object within that scope.
 - Every core contribution has motivation, a method realization, and evidence.
 - Innovations connect across sections while retaining distinct roles.
 - Structure follows the suite or the user's explicit alternative.

@@ -1,19 +1,19 @@
 ---
-name: ieee-transactions-paper-writing-citation
-description: Plan, draft, revise, and review IEEE Transactions citations and references. Find and verify sources, claim support, publication versions, bibliographic metadata, source quality, and BibTeX display conventions.
+name: ieee-paper-writing-citation
+description: Plan, draft, revise, and review citations and references for IEEE academic papers. Find and verify sources, claim support, publication versions, bibliographic metadata, source quality, and BibTeX display conventions.
 license: MIT
 allowed-tools: Read Write Edit Glob Grep Bash WebSearch WebFetch
 metadata:
   language: en
-  trigger: IEEE Transactions citation and reference planning, drafting, revision, and review.
-  target-venue: IEEE Transactions journals
-  source_repository: https://github.com/Arcadiastra/ieee-transactions-paper-writing-zh.git
+  trigger: Planning, drafting, revision, and review of citations and references for IEEE academic papers.
+  target-venue: IEEE journals and conferences
+  source_repository: https://github.com/Arcadiastra/ieee-paper-writing-zh.git
 ---
 # Citation
 
-Read the [main skill](../../SKILL.md). The following display rules are suite defaults, not universal requirements for all IEEE publications. Explicit target-venue requirements take precedence. **Use at least 30 references, including at least 20 from IEEE Transactions sources.**
+Read the [main skill](../../SKILL.md). The following display rules are suite defaults; official submission requirements take precedence. **The Transactions preset requires at least 30 references, including at least 20 from IEEE Transactions sources.** For short papers, scale the budgets by the page ratio specified in the main skill.
 
-Prioritize source quality. Limit references from JCR Q3 or lower journals and lower-tier conferences; favor relevant Q1/Q2 work, particularly IEEE Transactions. Prefer work from the past 15 years. Leading AI conferences may be appropriate for interdisciplinary work, while IEEE Transactions remains the primary source family.
+Prioritize source quality. Limit references from JCR Q3 or lower journals and lower-tier conferences; favor relevant high-quality Q1/Q2 work, especially IEEE Transactions papers from the past 15 years. For interdisciplinary AI research, cite relevant leading-conference papers as appropriate to the research topic, while keeping IEEE Transactions as the primary source family.
 
 Do not cite ResearchGate as the publication source. Trace the final publication and the original source of the conclusion; avoid relying repeatedly on one review article.
 
