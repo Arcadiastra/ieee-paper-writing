@@ -71,6 +71,15 @@ If an existing paper substantially differs from this structure, stop and ask the
 
 Proceed only according to the selected option.
 
+### Conference and Short-Paper Adaptation
+
+When the target is a conference paper, letter, or other short manuscript, first read the official submission instructions of the venue. Verify the total page limit and whether it includes references, the abstract word limit, the number and ordering rule of Index Terms, the document class and its options, and the format of author information and first-page footnotes. Official requirements take precedence over this suite's defaults; when they conflict, follow the official requirement and tell the user.
+
+- Scale the recommended section budgets, hard limits, and reference count in proportion to the page limit.
+- Reserve the author block, affiliations, first-page footnote, and acknowledgment at their real line counts from the first build, so that every page measurement reflects the final layout. If the user has not supplied this information, omit the acknowledgment by default, reserve five placeholder lines for the author block, and reserve three placeholder lines for the first-page footnote.
+- When the page budget cannot hold every subsection required by the section skills, adjacent subsections may be merged, with each argumentative responsibility still covered.
+- Content that a section skill marks as omissible in short papers is omitted with the user's consent.
+
 ### Drafting Order
 
 Follow this order unless the user specifies another. Skip completed material. For substantial incompatibilities, propose a major revision or rewrite and obtain approval before editing.
@@ -82,7 +91,7 @@ Follow this order unless the user specifies another. Skip completed material. Fo
 5. Draft the introduction and organize, verify, and format citations.
 6. Distill the abstract, Index Terms, and conclusion.
 7. Perform a full-manuscript acceptance check without enforcing the total page limit at this stage.
-8. Adjust the full manuscript to the total page budget. First keep the abstract within 150-200 words. For a two-column final page, fill the left column and approximately 60% of the right column's text height; for a single-column final page, target approximately 80% of the text height.
+8. Adjust the full manuscript to the total page budget. First keep the abstract within 150-200 words. For a two-column final page, fill the left column and approximately 60% of the right column's text height; for a single-column final page, target approximately 80% of the text height. Measure the page count and final-page fill on the rendered PDF before reporting them; never estimate them.
 9. Perform a full-manuscript acceptance check.
 
 Respect section hard limits during drafting. In the final length pass, use recommended ranges while keeping the whole PDF within its limit.
@@ -107,7 +116,7 @@ Use distinct treatments of the same contribution: the abstract gives a miniature
 
 ## Affirmative Phrasing
 
-Review `instead`, `instead of`, `rather than`, `not`, `but not`, `without`, `unlike`, `as opposed to`, and `not only ... but also`. For rhetorical "not A, but B" statements, remove A and state B directly. Where this suite prohibits negative phrasing, these expressions are also prohibited. If an equivalent affirmative statement is impossible or a counterexample's implications are unclear, ask the author.
+Review `instead`, `instead of`, `rather than`, `not`, `but not`, `without`, `unlike`, `as opposed to`, and `not only ... but also`. For rhetorical "not A, but B" statements, remove A and state B directly. Where this suite prohibits negative phrasing, these expressions are also prohibited. If an equivalent affirmative statement is impossible or a counterexample's implications are unclear, ask the user.
 
 | Original                                                                                                                  | Affirmative direction                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
@@ -122,12 +131,15 @@ Review `instead`, `instead of`, `rather than`, `not`, `but not`, `without`, `unl
 
 State necessary conditions affirmatively, for example `Under the stated assumptions, ...`. Group and streamline criticism of related work, targeting the specific research gap that motivates this paper.
 
-## Sentence Logic and Terminology
+## Writing Logic and Terminology Guidelines
 
-- Prefer an overview-to-detail structure within paragraphs and clear transitions between paragraphs.
+- Prefer an overview-to-detail structure within paragraphs and clear transitions between paragraphs, using appropriate transition words, phrases, or paragraphs.
 - Advance one central judgment per paragraph: topic -> evidence or mechanism -> inference -> transition.
-- Identify causation, progression, parallelism, contrast, conditions, or synthesis before choosing connectors such as `therefore`, `furthermore`, `meanwhile`, `however`, `under`, or `taken together`. Omit a connector when unnecessary.
+- Attend to logical relationships between sentences: identify causation, progression, parallelism, contrast, conditions, or synthesis before choosing connectors such as `therefore`, `furthermore`, `meanwhile`, `however`, `under`, or `taken together`. Omit a connector when unnecessary.
 - Keep technical terms, module names, abbreviations, symbols, and figure labels consistent. Do not rename technical concepts merely for variety.
+- Before finalizing, list the core terms and search the full text for each. **Ensure that every concept has one name, every name denotes one concept, and each is defined at first use.**
+- When a general word coincides with a specialized term of the field, use an unambiguous expression.
+- Pronouns and summarizing phrases such as `this`, `the two`, and `the model` must resolve to one specific object in the preceding text; when ambiguity exists, name the object.
 - When over length, remove empty emphasis and formulaic filler first. Every sentence should convey information or reasoning.
 
 ## Figures and Tables
@@ -137,6 +149,9 @@ State necessary conditions affirmatively, for example `Under the stated assumpti
 - Add a legend when the visual encoding is unclear.
 - **Use concise caption phrases or sentences, at most 15 words, and keep every caption on one rendered PDF line.**
 - Cite every figure and table in the body.
+- The caption names the object; axis labels and legends state the plotted quantities. Keep their roles distinct and **minimize repetition** among them.
+- Match in-figure fonts and sizes to the body text, and check the actual sizes and embedded fonts in the rendered PDF.
+- Elements of system and workflow diagrams must agree with the objects, locations, and names stated in the text.
 - Do not duplicate the same data in both a figure and a table. Prefer line plots for many experimental groups emphasizing trends, bar charts for fewer groups emphasizing comparisons, pie charts for proportions, and tables for dense heterogeneous data.
 
 ## Formatting Rules
@@ -167,6 +182,22 @@ Self-check:
 6. State advantages explicitly; do not expect reviewers to discover them unaided in a table.
 7. Every experiment must have an argumentative purpose; remove it if it has none.
 8. Reinforce the key takeaways in the conclusion rather than introducing sudden self-negation.
+9. Results unfavorable to the core contribution that surface during drafting or checking may stay out of the body, but report them faithfully to the user with their implications, and let the user decide how to handle them.
+
+## Evidence Consistency Check
+
+Every claim, setting, and value in the manuscript must trace back to the records and results of what was actually run. When drafting or revising results and discussions, and after every update of data or figures, check each item:
+
+1. Method: figures and tables show the output of the proposed method; benchmark or reference methods appear as comparisons, with their role stated in the text.
+2. Metric: the name and definition of each metric in text and figures match the quantity actually computed.
+3. Comparison basis: methods and scenarios within one comparison use the same sample set and the same evaluation objects; where the basis must differ, state it in the text.
+4. Statistical sufficiency: for grouped or binned statistics, confirm that each group has enough samples to support the stated trend; merge or remove thin groups, so that sampling fluctuation is never read as a phenomenon.
+5. Actual settings: experimental settings written into the text come from the records of the actual runs; script defaults and memory are not evidence.
+6. Reasonable settings: experimental settings are physically or practically reasonable, and their values can be justified to a reviewer.
+7. Grounded explanations: verify each mechanism-based explanation of a result against data or derivation before writing it.
+8. Closed updates: after any change of data or settings, recheck every figure, claim, translation, and companion material that depends on it.
+
+On finding an inconsistency, first report the facts and their impact to the user, then propose the revision.
 
 ## Revision and Acceptance Workflow
 
@@ -176,6 +207,8 @@ For passages other than section endings, abstracts, and conclusions, a proposal 
 
 For newly added passages or missing context at section boundaries, explain the absence briefly.
 
+Substantive edits at sentence or phrase level may use a short proposal with three parts: original sentence, revised sentence, and rationale. When several reasonable revisions exist, list the alternatives with a recommendation. Edits at paragraph level and above use the full proposal.
+
 Proofreading order:
 
 1. Check the journal's topic scope. If there is a clear `out of scope` risk, immediately alert the user through the environment's user-confirmation dialog. Explain the relevant official scope entries, the manuscript's current content, and whether the risk concerns unclear presentation or a substantive research mismatch. If no dialog tool is available, give an explicit conversational alert and wait for confirmation.
@@ -184,7 +217,7 @@ Proofreading order:
 4. Correct clear spelling, grammar, and formatting errors.
 5. Improve wording, sentences, paragraphs, transitions, and logical relations.
 6. Resolve clear internal mismatches and contradictions.
-7. Review misleading expressions and claims stronger than the evidence.
+7. Review misleading expressions and claims stronger than the evidence. Keep conclusions that follow strictly from derivation exact, word conclusions drawn from experiments in proportion to their evidence, and check each degree or evaluative word against the experiment that supports it.
 8. Reduce repetition, retaining one detailed explanation or distinct perspectives where needed.
 9. Address other detailed issues.
 10. Align length and submission formatting.
@@ -193,12 +226,15 @@ Editing checks:
 
 1. Read the current manuscript and supporting material; confirm scope, build entrypoint, and target version. Propose substantive edits before applying them.
 2. Check the contribution chain and section responsibilities first. Identify missing facts for confirmation.
-3. Edit only the authorized scope and preserve the user's existing changes.
-4. After layout changes, compile and inspect PDF page count, references, numbering, overflow, and key rendered pages.
+3. Edit only the authorized scope and preserve the user's existing changes. Before each edit and each commit, check the user's latest changes, keep them, and list them in the report.
+4. After layout changes, compile and inspect PDF page count, references, numbering, overflow, and key rendered pages. Report page count and final-page slack as measured values.
 5. If over length, report it and propose low-loss reductions: repeated discussion -> rhetorical negation -> non-core engineering details -> redundant visuals and whitespace. Never silently alter margins, shrink fonts, or delete essential mechanisms.
 6. If figures show clear signs of fabricated data, immediately alert the author to the academic risk.
 7. If figures appear strongly suggestive of AI generation, flag the possible publication concern and propose redrawing.
 8. Crop unnecessary margins and prefer width-to-height ratios of at least 4:3 to save space. For portrait-oriented figures, propose rotation, coordinate transformations, or rearrangement of visual elements as appropriate.
+9. When the manuscript exists in several languages, synchronize all versions after every edit.
+10. Run verification builds in a way that leaves the user's working environment undisturbed, and confirm that the engine and fonts match the target template.
+11. For external reviews or rewrite drafts forwarded by the user, structural and stylistic suggestions may be adopted; verify each factual statement against code, data, and the manuscript before writing it in, and tell the user what was adopted and what was corrected.
 
 ## Overall Acceptance
 
@@ -210,4 +246,7 @@ Editing checks:
 - Experimental setup is concise, without unsolicited multi-seed studies or exhaustive engineering reproduction requirements.
 - Preserve true conditions and match connectors to logical relations.
 - Figures, equations, text, and citations agree; the complete PDF meets its length target.
+- The evidence consistency check passes: figures, metrics, comparison bases, and experimental settings agree with the actual runs.
+- Each core term has one meaning, and every reference resolves clearly.
+- For a conference or short paper, the official submission requirements are verified and met.
 - Figures show no apparent fabrication or AI-generation artifacts, and visuals agree with one another and the text.

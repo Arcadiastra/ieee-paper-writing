@@ -13,7 +13,7 @@ metadata:
 
 Read the [main skill](../../SKILL.md), then consult the problem analysis, mechanisms, and actual results. A writing request does not authorize new experiments. Recommended length: 2.0-3.0 pages; hard maximum: 3.5 pages.
 
-Use subsections for at least experimental design, baselines and metrics, and main results. Baselines and metrics may be split into separate subsections. Add supporting experiments after the main results when appropriate.
+Use subsections for at least experimental design, baselines and metrics, and main results. Baselines and metrics may be split into separate subsections. Add supporting experiments after the main results when appropriate. In a short paper with insufficient space, subsections may be merged as described under Conference and Short-Paper Adaptation in the main skill.
 
 ## Purpose and Inputs
 
@@ -27,9 +27,11 @@ Draft from the established contributions and actual experimental design and resu
 
 1. Introduce test systems or settings, their metadata, and data sources. Identify official test cases by their official names. Provide a structural visualization for each system; combine systems into one figure if space is tight.
 2. Briefly explain data generation and processing, simulation or solution tools, relevant settings, how the target scenario is instantiated, and prerequisite assumptions. When space is limited, numerical parameter settings and dataset sizes need not be enumerated.
-3. State experimental hardware, including CPU, RAM, GPU when used, and relevant models, counts, or capacities. Prefer no more than three rendered PDF lines, but do not omit it.
+3. State experimental hardware, including CPU, RAM, GPU when used, and relevant models, counts, or capacities. Prefer no more than three rendered PDF lines, but do not omit it. Sole exception: in a short paper under page pressure whose contributions do not concern computational efficiency, it may be omitted with the user's consent.
 
 Do not expand data volumes, all partitions, hyperparameters, tuning procedures, or computational complexity unless they are central contributions or necessary evidence. Retain settings that affect comparison meaning, later reasoning, or innovation claims.
+
+State each setting once, in one place. Content already shown in the system diagram needs no restatement; the setup text gives the conditions that the diagram leaves out and that later text uses directly.
 
 ### Baselines and Metrics
 
@@ -49,6 +51,8 @@ Organize paragraphs as qualitative observation -> difficulty from problem analys
 
 Analyze overall patterns first, then particular settings, curves, or points. Distinguish correlation from causation.
 
+Follow the order of the figures and tables, advancing one visual at a time, with no jumping back and forth among them. When a result depends on a physical or mechanistic premise, state the premise first and then read the figure.
+
 ### Supporting Results
 
 Use the same approach as for main results without repeating the same conclusion. Support a particular innovation or an aspect not fully covered by the main experiment.
@@ -58,6 +62,7 @@ Use the same approach as for main results without repeating the same conclusion.
 - **Do not write a laboratory report.** Full engineering reproducibility is not the narrative objective; explain the essential design. Keep numerical results in visuals and use mechanism-based qualitative interpretation in prose.
 - **For potentially challenging counterexamples, explain possible variation affirmatively rather than introducing negative defensive restrictions.**
 - Multiple random seeds are generally not required by default; robustness does not automatically require a multi-seed study.
+- Before and after drafting, run the Evidence Consistency Check of the main skill on figures, metrics, comparison bases, and experimental settings.
 
 ## Visual Selection
 
@@ -77,5 +82,6 @@ Use the same approach as for main results without repeating the same conclusion.
 - Keep the discussion concise and direct.
 - Avoid redundant visual and textual representations; select formats appropriately.
 - Follow the writing rules.
+- Pass the Evidence Consistency Check of the main skill.
 - Include the required content and subsections.
 - Stay within the hard length limit.

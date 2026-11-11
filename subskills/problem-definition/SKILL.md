@@ -38,7 +38,7 @@ Do not repeat detailed foundational theory unrelated to the core contributions.
 - Align constraints with the algorithms and metrics in the experiments.
 - Explain the meaning and role of equations. Introduce core inputs or known quantities above a displayed equation; explain outputs, intermediate variables, and local subscripts below it. Avoid redundant definitions and never assign conflicting definitions to a symbol.
 - Exclude experimental condition definitions and results. Do not cite or depend on notation introduced only in methodology.
-- Define all notation needed later, but do not introduce unused notation. Coordinate this with methodology.
+- **Define all notation needed later, but do not introduce unused notation.** Coordinate this with methodology. Concepts and properties defined in this section must be put to use in its analysis or in later sections.
 
 ## From Analysis to Contributions
 
