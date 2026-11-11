@@ -16,7 +16,28 @@ Although this is an agent writing skill, authors are encouraged to draw on its p
 
 ## Installation
 
-Copy the entire `ieee-paper-writing` folder into the skills directory of your agent, retaining all subdirectories:
+### Option 1: Install with npx (recommended)
+
+```bash
+npx skills add https://github.com/Arcadiastra/ieee-paper-writing.git
+```
+
+Requires Node.js and npm. Follow the prompts to choose the target agent and installation scope.
+
+### Option 2: Clone with Git
+
+```bash
+# Clone into the Codex skills directory
+git clone https://github.com/Arcadiastra/ieee-paper-writing.git ~/.agents/skills/ieee-paper-writing
+
+# Clone into the Claude Code skills directory
+git clone https://github.com/Arcadiastra/ieee-paper-writing.git ~/.claude/skills/ieee-paper-writing
+```
+
+### Option 3: Manual installation
+
+1. Download the ZIP file of this project or clone it locally.
+2. Name the extracted folder `ieee-paper-writing` and copy it into the skills directory of your agent, retaining all subdirectories:
 
 | Agent | macOS / Linux | Windows |
 | --- | --- | --- |
